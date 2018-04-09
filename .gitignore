@@ -1,0 +1,5 @@
+terraform.tfstate
+terraform.tfstate.backup
+*.tf
+crash.log
+terraform-provider-vsts
