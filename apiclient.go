@@ -30,6 +30,8 @@ type VSTSClient struct {
 	HTTPClient *http.Client
 }
 
+const AcceptHeader = "application/json;api-version=4.0-preview;excludeUrls=true"
+
 func (c *VSTSClient) Do(method, endpoint string, payload *bytes.Buffer) (*http.Response, error) {
 
 	absoluteendpoint := fmt.Sprintf("https://%s.visualstudio.com/%s", c.Account, endpoint)
@@ -46,6 +48,7 @@ func (c *VSTSClient) Do(method, endpoint string, payload *bytes.Buffer) (*http.R
 	if err != nil {
 		return nil, err
 	}
+	req.Header.Add("Accept", AcceptHeader)
 
 	req.SetBasicAuth(c.Account, c.Token)
 
