@@ -228,10 +228,8 @@ func resourceProjectRead(d *schema.ResourceData, m interface{}) error {
 func resourceProjectUpdate(d *schema.ResourceData, m interface{}) error {
 	d.Partial(true)
 	if d.HasChange("name") {
-		// if err := updateName(d, m); err != nil {
-		//	return err
-		// }
-		d.SetPartial("name")
+		// I could update this via the interactive webinterface but ugh.
+		return errors.New(fmt.Sprintf("There is no VSTS API endpoint to change the name. Please make this change via the web interface"))
 	}
 	// err := nil
 	d.Partial(false)
