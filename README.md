@@ -50,6 +50,18 @@ JSON
 `type` should be `ADCC42AB-9882-485E-A3ED-7678F01F66BC` for Agile, or `27450541-8E31-4150-9947-DC59F998FC01` for
 CMMI, or `6B724908-EF14-45CF-84F8-768B5384DA45` for Scrum process templates.
 
+
+### Repositories
+
+Repositories belong to a project, so there must be a project in your terraform definitions.
+
+```
+resource "vsts_repository" "mainrepo" {
+   project = "${vsts_project.testproj.id}"
+   name    = "Y"
+}
+```
+
 Limitations
 -----------
 

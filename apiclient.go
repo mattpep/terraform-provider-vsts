@@ -89,6 +89,10 @@ func (c *VSTSClient) Get(endpoint string) (*http.Response, error) {
 	return c.Do("GET", endpoint, nil)
 }
 
+func (c *VSTSClient) Patch(endpoint string, jsonpayload *bytes.Buffer) (*http.Response, error) {
+	return c.Do("PATCH", endpoint, jsonpayload)
+}
+
 func (c *VSTSClient) Post(endpoint string, jsonpayload *bytes.Buffer) (*http.Response, error) {
 	return c.Do("POST", endpoint, jsonpayload)
 }
