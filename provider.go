@@ -8,8 +8,9 @@ import (
 func Provider() *schema.Provider {
 	return &schema.Provider{
 		ResourcesMap: map[string]*schema.Resource{
-			"vsts_repository": resourceRepository(),
-			"vsts_project":    resourceProject(),
+			"vsts_repository":       resourceRepository(),
+			"vsts_project":          resourceProject(),
+			"vsts_service_endpoint": resourceServiceEndpoint(),
 		},
 		ConfigureFunc: providerConfigure,
 		Schema: map[string]*schema.Schema{
