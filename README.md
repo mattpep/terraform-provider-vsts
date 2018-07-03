@@ -1,6 +1,10 @@
 Terraform Provider for Visual Studio Team Services
 ==================================================
 
+In this guide I am making the assumption that the reader is familiar with basic terraform usage.
+https://www.terraform.io/intro/getting-started/install.html is a good starting
+point for those taking their first steps.
+
 Provider configuration
 ----------------------
 
@@ -67,3 +71,20 @@ Limitations
 
 Resource importing is not available yet.
 
+Installation and system requirements
+------------------------------------
+
+You'll need a Golang environment. There are numerous guides online so I'll
+refrain from duplicating that information here.
+
+Clone this repo and then build the terraform binary. I've created a simple
+Makefile, so you can just use the command `make`, but you can use the `go
+build` command if you prefer.
+
+Once built you can either install the binary to somewhere in the path (such
+that terraform binary can find it) or you can keep it in the same directory as
+the terraform resource definitions.
+
+Configure the provider (as shown at the top of this guide) and any desired
+resources, then run the regular terraform commands such as `terraform plan` or
+`terraform apply`.
